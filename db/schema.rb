@@ -10,20 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_23_140651) do
+ActiveRecord::Schema.define(version: 2021_06_23_122951) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "accounts", force: :cascade do |t|
+    t.bigint "users_id", null: false
     t.string "login"
     t.string "password"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["users_id"], name: "index_accounts_on_users_id"
   end
 
   create_table "chats", force: :cascade do |t|
     t.bigint "account_id", null: false
+    t.string "name"
+    t.boolean "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["account_id"], name: "index_chats_on_account_id"
@@ -32,6 +36,8 @@ ActiveRecord::Schema.define(version: 2021_06_23_140651) do
   create_table "messages", force: :cascade do |t|
     t.bigint "chat_id", null: false
     t.text "content"
+    t.integer "answer"
+    t.integer "integer unsigned"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["chat_id"], name: "index_messages_on_chat_id"
@@ -62,6 +68,7 @@ ActiveRecord::Schema.define(version: 2021_06_23_140651) do
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
   end
 
+  add_foreign_key "accounts", "users", column: "users_id"
   add_foreign_key "chats", "accounts"
   add_foreign_key "messages", "chats"
 end
