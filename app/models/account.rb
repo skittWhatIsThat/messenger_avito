@@ -5,5 +5,7 @@ class Account < ApplicationRecord
 
   attribute :login,:string
   attribute :password, :string
+  attribute :role, :string
+  attribute :nickname, :string
 
 end
