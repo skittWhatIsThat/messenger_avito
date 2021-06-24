@@ -6,7 +6,7 @@ class CreateChats < ActiveRecord::Migration[6.1]
 
       t.string :name
       t.boolean :status
-      t.time :time_last_messages
+
 
       t.timestamps
     end
