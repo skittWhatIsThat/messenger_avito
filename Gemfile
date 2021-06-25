@@ -19,8 +19,11 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 # Use Devise as the app authentication
 gem 'devise_token_auth'
+gem 'devise'
 # Use Devise as the app authentication for request
 gem 'rack-cors'
+# Use serializers as the app use serializers
+gem 'active_model_serializers'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
