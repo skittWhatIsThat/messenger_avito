@@ -1,0 +1,16 @@
+<h1>Webhook on Rails</h1>
+
+<div class="box-status">
+  <h2>Status:</h2>
+  Number of emails sent: <%= @number_of_emails_sent %> <br />
+  Number of emails opened: <%= @number_of_emails_opened %> <br />
+  Number of clicks: <%= @number_of_clicks %>
+</div>
+
+<% @email_types.each do |email_type| %>
+  <div class="box-types">
+    <h4><%= email_type.underscore.humanize %></h4>
+    OPEN rate: <%= @webhook.rate_between(email_type, 'open') %>% <br />
+    CLICK rate: <%= @webhook.rate_between(email_type, 'click') %>% <br />
+  </div>
+<% end %>
