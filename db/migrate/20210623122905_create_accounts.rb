@@ -5,6 +5,7 @@ class CreateAccounts < ActiveRecord::Migration[6.1]
 
       t.string :login
       t.string :password
+      t.string :webhook_token
 
       t.timestamps
     end
