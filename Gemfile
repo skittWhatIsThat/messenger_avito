@@ -24,8 +24,11 @@ gem 'devise'
 gem 'rack-cors'
 # Use serializers as the app use serializers
 gem 'active_model_serializers'
-# Use interaptor as the app use webhook
-gem 'interaptor'
+
+
+gem "interactor-rails", "~> 2.0"                              # Interactor Rails provides Rails support for the Interactor gem.
+# Use faraday as the app use RESTAPI
+gem 'faraday'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
