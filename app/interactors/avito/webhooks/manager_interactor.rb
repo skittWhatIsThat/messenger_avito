@@ -1,0 +1,1 @@
+# here will manage avito webhook statuses

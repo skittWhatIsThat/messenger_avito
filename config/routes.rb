@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :webhooks
+  namespace :webhooks do
+    get 'new_message', to: 'avito#message'
+  end
+
   namespace :api do
     namespace :v1 do
       mount_devise_token_auth_for 'User', at: 'auth'

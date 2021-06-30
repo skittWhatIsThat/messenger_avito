@@ -24,6 +24,8 @@ gem 'devise'
 gem 'rack-cors'
 # Use serializers as the app use serializers
 gem 'active_model_serializers'
+# Use interaptor as the app use webhook
+gem 'interaptor'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
